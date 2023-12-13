@@ -1,19 +1,34 @@
-# Fancy MOTD
-Fancy, colorful MOTD written in bash. Server status at a glance.
-
-![MOTD screenshot](readme-img.png)
-
-## Usage
 
 ### Running
-Clone the repository:
+Cloner le dossier :
 ```shell
 git clone https://github.com/themp10/MOTD.git
 ```
 
-Then run `motd.sh`:
+Acceder au dossier
 ```shell
-./fancy-motd/motd.sh
+cd MOTD/
+```
+
+Installer les packages necessaires
+
+```shell
+sudo apt-get install figlet curl bc fortune lm-sensors
+```
+
+Donner les droits d'execution à `motd.sh`
+```shell
+sudo chmod +x motd.sh
+```
+
+
+### Executer au login
+
+Pour executer le MOTD au login 
+ajouter cette ligne dans `.profile`
+
+```shell
+~/MOTD/motd.sh
 ```
 
 This runs all the scripts in `modules` directory in order, `run-parts` style, and formats the output.
@@ -24,6 +39,9 @@ You can also pass the config file path as the script argument (see [configuratio
 ```shell
 ./fancy-motd/motd.sh ./path/to/config.sh
 ```
+
+
+
 
 ### Running at login
 One way to run it at each login is to add a line to `~/.profile` file (assuming you cloned `fancy-motd` into your home directory):
