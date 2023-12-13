@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+# shellcheck source=./framework.sh
+source "${BASE_DIR}/framework.sh"
+
+# shellcheck disable=SC1091
+source "/etc/os-release"
+# Extract OS name and version
+OS_NAME_VERSION="${NAME} ${VERSION}"
+print_columns "OS" "${OS_NAME_VERSION%(*}"
+
+#print_columns "OS" "${NAME} ${VERSION:-}"

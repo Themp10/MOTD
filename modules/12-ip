@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+# shellcheck source=./framework.sh
+source "${BASE_DIR}/framework.sh"
+
+ips_v4=$(ip a | awk '/inet / && /global/ {split($2, arr, /\//); print arr[1]}')
+IFS=$'\n' read -r -a ips <<< "${ips_v4}"
+
+text=$(print_wrap "${WIDTH}" "${ips[@]}")
+
+
+
+
+ip_v4_pub=$(curl ifconfig.me/ip)
+
+text_pub=$(print_wrap "${WIDTH}" "${ip_v4_pub}")
+
+
+
+print_columns "IP addresses" "Server IP : ${text} | Ip publique : ${text_pub}"
