@@ -12,7 +12,7 @@ Installer les packages necessaires
 ```shell
 sudo apt-get install figlet curl bc fortune lm-sensors
 ```
-Desactiver le MOTD Ubuntu par défaut:
+Desactiver le MOTD Ubuntu par défaut:(mais cela depend des versions/distri linux)
 ```shell
 sudo chmod -x /usr/share/landscape/landscape-sysinfo.wrapper
 ```
