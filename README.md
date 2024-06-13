@@ -38,6 +38,9 @@ sudo chmod -R +x MOTD/
 ### Executer au login
 
 Pour executer le MOTD au login 
+```shell
+cd ..
+```
 ajouter cette ligne dans `.profile`
 
 ```shell
